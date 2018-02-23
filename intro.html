@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Introdution - AngularJS</title>
+        <meta charset="utf-8"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        
+
+        <div ng-app="myApp" ng-controller="myCtrl">
+            First name: <input type="text" ng-model="firstName"/><br/>
+            Last name: <input type="text" ng-model="lastName"/><br/>
+            <br/>
+            Full name: {{firstName + " " + lastName}} 
+        </div>
+
+        <script>
+            var app = angular.module("myApp", []);
+            app.controller("myCtrl", function($scope) {
+                $scope.firstName = "Welson";
+                $scope.lastName = "Teles";
+            });
+        </script>
+    </body>
+</html>
