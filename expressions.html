@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Expressions - AngularJS</title>
+        <meta charset="utf-8"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="" ng-init="quantity=3;cost=7.98;
+        firstName='Welson';
+        lastName='Teles';
+        person={fullName:'Welson de Lima Teles'};
+        points=[1,15,19,2,40]">
+            <p>My first expression: {{ 5 + 5 }}</p>
+
+            <input style="background-color:{{myColor}}" ng-model="myColor" value="{{myColor}}"/>
+            <p>Total in dollar: $ {{quantity * cost}}</p>
+            <p>The name is {{firstName + " " + lastName}}</p>
+            <p ng-bind="firstName + ' ' + lastName"></p>
+            <p>The name is {{person.fullName}}</p>
+            <p ng-bind="person.fullName"></p>
+            <p>The third result is {{points[2]}}</p>
+            <p>The third result is <span ng-bind="points[2]"></span></p>                    
+        </div>
+    </body>
+</html>
