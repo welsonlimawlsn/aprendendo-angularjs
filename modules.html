@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Modules - AngularJS</title>
+        <meta charset="utf-8"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApplication" ng-controller="myController">
+            {{ firstName + " " + lastName }}
+            <div w3-test-directive></div>
+        </div>
+
+        <script src="myApplication.js"></script>
+        <script src="myController.js"></script>
+        <script>
+            app.directive("w3TestDirective", function() {
+                return {
+                    template : "I was made in a directive contructor!"
+                };
+            });
+        </script>
+    </body>
+</html>
