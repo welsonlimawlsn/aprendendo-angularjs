@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Model - AngularJS</title>
+        <meta charset="utf-8"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <style>
+            /*
+                ng-empty
+                ng-not-empty
+                ng-touched
+                ng-untouched
+                ng-valid
+                ng-invalid
+                ng-dirty
+                ng-pending
+                ng-pristine
+            */
+            input.ng-invalid {
+                background-color: firebrick;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-app="myApplication" ng-controller="myController" ng-init="textEmail='welsonlimawlsn@gmail.com'">
+            <form name="myForm">
+                <label for="name">Name: </label>
+                <input type="text" id="name" ng-model="name"/>
+                <h1>You entered: {{name}}</h1>
+                <label for="email">Email: </label>
+                <input type="email" name="myAddress" ng-model="textEmail" required/>
+                <span style="color:firebrick;" ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+                <h1>Status</h1>
+                Valid: {{myForm.myAddress.$valid}}<br/>
+                Dirty: {{myForm.myAddress.$dirty}}<br/>
+                Touched: {{myForm.myAddress.$touched}}
+            </form>
+        </div>
+        <script>
+            var app = angular.module("myApplication", []);
+            app.controller("myController", function($scope) {
+                $scope.name = "Welson Teles";
+            });
+        </script>
+    </body>
+</html>
