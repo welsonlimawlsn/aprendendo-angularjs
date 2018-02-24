@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Data Binding - AngularJS</title>
+        <meta charset="utf-8"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApplication" ng-controller="myController">
+            <p>First name: <span ng-bind="firstName"></span></p>
+            <p>Middle name: {{middleName}}</p>
+            <p><input ng-model="lastName"/></p>
+            <p>Last name: {{lastName}}</p>
+            <h1 ng-click="changeName()">{{firstName}}</h1>
+        </div>
+        <script>
+            var app = angular.module("myApplication", []);
+            app.controller("myController", function($scope) {
+                $scope.firstName = "Welson";
+                $scope.middleName = "Lima";
+                $scope.lastName = "Teles";
+                $scope.changeName = function() {
+                    $scope.firstName = "Wilson";
+                }
+            });
+        </script>
+    </body>
+</html>
