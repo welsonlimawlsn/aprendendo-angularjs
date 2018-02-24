@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Modules - AngularJS</title>
+        <meta charset="utf-8"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApplication">
+            <div ng-controller="myController">
+                First Name: <input type="text" ng-model="firstName"/><br/>
+                Last Name: <input type="text" ng-model="lastName"/><br/>
+                <br/>
+                Full Name: {{fullName()}}
+            </div>
+            <ul ng-controller="namesController">
+                <li ng-repeat="x in names">
+                    {{x.name + " is from " + x.country}}
+                </li>
+            </ul>
+        </div>
+
+        <script src="myApplication.js"></script>
+        <script src="person-controller.js"></script>
+        <script src="namesController.js"></script>
+    </body>
+</html>
